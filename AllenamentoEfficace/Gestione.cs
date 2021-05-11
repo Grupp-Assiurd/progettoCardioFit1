@@ -38,5 +38,30 @@ namespace AllenamentoEfficace
             }
             return Math.Round(media, 2);
         }
+        public static bool BattitiRisposo(int battito)
+        {
+            Scrivifile();          
+            using StreamReader sr = new StreamReader("battitiRiposo.txt");
+            string line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                if (int.Parse(line) == battito)
+                    return true;
+            }
+            return false;
+
+        }
+
+        private static void Scrivifile()
+        {
+            StreamWriter w = new StreamWriter("battitiRiposo.txt");
+            Random r = new Random();
+            for (int i = 0; i < 100; i++)
+            {
+                w.WriteLine(r.Next(60, 101));
+            }
+            w.Flush();
+            w.Close();
+        }
     }
 }

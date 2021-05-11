@@ -1,5 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AllenamentoEfficace;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DataCardio_test
 {
@@ -20,5 +20,22 @@ namespace DataCardio_test
             string risposta = Gestione.btmMaxMin(eta);
             Assert.AreEqual(risultatoAspettato, risposta);
         }
+        [DataTestMethod]
+        [DataRow(78,true)]
+        [DataRow(68,true)]
+        [DataRow(61,true)]
+        [DataRow(94,true)]
+        [DataRow(62,true)]
+        [DataRow(78,true)]
+        [DataRow(66,true)]
+        [DataRow(58,false)]
+        [DataRow(88,true)]
+        [DataRow(100,true)]
+        public void BattitiRiposo(int battiti, bool risultato)
+        {
+            bool risposta = Gestione.BattitiRisposo(battiti);
+            Assert.AreEqual(risultato, risposta);
+        }
+
     }
 }
