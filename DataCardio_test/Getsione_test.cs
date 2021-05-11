@@ -36,6 +36,12 @@ namespace DataCardio_test
             bool risposta = Gestione.BattitiRisposo(battiti);
             Assert.AreEqual(risultato, risposta);
         }
-
+        [DataTestMethod]
+        [DataRow(69.81)]
+        public void MediaGiornaliera(double risultato)
+        {
+            double risposta = Gestione.LetturafileMediaGiornaliera();
+            Assert.AreEqual(risultato, risposta);
+        }
     }
 }

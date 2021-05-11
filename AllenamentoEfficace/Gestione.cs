@@ -5,8 +5,6 @@ namespace AllenamentoEfficace
 {
     public class Gestione
     {
-        public static readonly string DIRECTORY = Directory.GetCurrentDirectory();
-        public const string FILE = @"\datiBattiti.txt";
         public static string btmMaxMin(int eta)
         {
             int freqMax = 220 - eta;
@@ -17,16 +15,7 @@ namespace AllenamentoEfficace
         public static double LetturafileMediaGiornaliera()
         {
             double media;
-            using (StreamWriter w = new StreamWriter(DIRECTORY + FILE))
-            {
-                Random r = new Random();
-                for (int i = 0; i < 1440; i++)
-                {
-                    w.WriteLine(r.Next(60, 80));
-                }
-                w.Flush();
-            }
-            using (StreamReader sr = new StreamReader(DIRECTORY + FILE))
+            using (StreamReader sr = new StreamReader("fileBattiti.txt"))
             {
                 string line;
                 double somma = 0;
@@ -38,9 +27,11 @@ namespace AllenamentoEfficace
             }
             return Math.Round(media, 2);
         }
+
+
         public static bool BattitiRisposo(int battito)
         {
-            Scrivifile();          
+            Scrivifile();           
             using StreamReader sr = new StreamReader("battitiRiposo.txt");
             string line;
             while ((line = sr.ReadLine()) != null)
@@ -49,7 +40,6 @@ namespace AllenamentoEfficace
                     return true;
             }
             return false;
-
         }
 
         private static void Scrivifile()
