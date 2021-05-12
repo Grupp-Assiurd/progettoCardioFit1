@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllenamentoEfficace", "Alle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rova metodi", "rova metodi\rova metodi.csproj", "{476D40B2-3153-45AE-96E6-3384A72537A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCardio_test", "DataCardio_test\DataCardio_test.csproj", "{A577E845-414E-4700-9E77-3FBB0455E2E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataCardio_test", "DataCardio_test\DataCardio_test.csproj", "{A577E845-414E-4700-9E77-3FBB0455E2E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCardioFit", "WpfCardioFit\WpfCardioFit.csproj", "{CDF97BB1-081B-4A72-BCE7-B414316A3A67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{A577E845-414E-4700-9E77-3FBB0455E2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A577E845-414E-4700-9E77-3FBB0455E2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A577E845-414E-4700-9E77-3FBB0455E2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF97BB1-081B-4A72-BCE7-B414316A3A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF97BB1-081B-4A72-BCE7-B414316A3A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF97BB1-081B-4A72-BCE7-B414316A3A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF97BB1-081B-4A72-BCE7-B414316A3A67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
