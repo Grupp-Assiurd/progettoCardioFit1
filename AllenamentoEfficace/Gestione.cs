@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace AllenamentoEfficace
@@ -52,6 +53,30 @@ namespace AllenamentoEfficace
             }
             w.Flush();
             w.Close();
+        }
+        public static double Variabilità()
+        {
+            double somma1 = 0, somma2 = 0, media1 = 0, media2 = 0;
+            StreamReader sr = new StreamReader("fileVariabilità.txt");
+            List<double> battiti = new List<double>();
+            string line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                battiti.Add(int.Parse(line));
+            }
+            sr.Close();
+            for (int i = 0; i < 720; i++)
+            {
+                somma1 += battiti[i];
+            }
+            for (int i = 720; i < 1440; i++)
+            {
+                somma2 += battiti[i];
+            }
+            media1 = somma1 / 720;
+            media2 = somma2 / 720;
+            return Math.Round(media2-media1, 3);
+            
         }
     }
 }

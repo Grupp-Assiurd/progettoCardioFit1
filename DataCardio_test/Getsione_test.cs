@@ -11,9 +11,9 @@ namespace DataCardio_test
         [DataRow(20, "180 140")]
         [DataRow(30, "171 133")]
         [DataRow(40, "162 126")]
-        [DataRow(50,"153 119")]
-        [DataRow(60,"144 112")]
-        [DataRow(70,"135 105")]
+        [DataRow(50, "153 119")]
+        [DataRow(60, "144 112")]
+        [DataRow(70, "135 105")]
 
         public void freqMaxMin(int eta, string risultatoAspettato)
         {
@@ -21,16 +21,16 @@ namespace DataCardio_test
             Assert.AreEqual(risultatoAspettato, risposta);
         }
         [DataTestMethod]
-        [DataRow(78,true)]
-        [DataRow(68,true)]
-        [DataRow(61,true)]
-        [DataRow(94,true)]
-        [DataRow(62,true)]
-        [DataRow(78,true)]
-        [DataRow(66,true)]
-        [DataRow(58,false)]
-        [DataRow(88,true)]
-        [DataRow(100,true)]
+        [DataRow(78, true)]
+        [DataRow(68, true)]
+        [DataRow(61, true)]
+        [DataRow(94, true)]
+        [DataRow(62, true)]
+        [DataRow(78, true)]
+        [DataRow(66, true)]
+        [DataRow(58, false)]
+        [DataRow(88, true)]
+        [DataRow(100, true)]
         public void BattitiRiposo(int battiti, bool risultato)
         {
             bool risposta = Gestione.BattitiRisposo(battiti);
@@ -41,6 +41,13 @@ namespace DataCardio_test
         public void MediaGiornaliera(double risultato)
         {
             double risposta = Gestione.LetturafileMediaGiornaliera();
+            Assert.AreEqual(risultato, risposta);
+        }
+        [DataTestMethod]
+        [DataRow(0.358)]
+        public void Variabilit‡Battito(double risultato)
+        {
+            double risposta = Gestione.Variabilit‡();
             Assert.AreEqual(risultato, risposta);
         }
     }
